@@ -103,7 +103,7 @@ function imagenGradienteColor() {
 
 function cargarImagen() {
   let image = new Image();
-  image.src = "img/puente.jpg";
+  image.src = document.getElementById('inputImg').value;
   image.crossOrigin = "anonymous";
   image.onload = function () {
     myDrawImageMethod(this);
@@ -128,7 +128,7 @@ function filtro() {
   let ctx = contexto.ctx;
   // let image = cargarImagen();
   let image = new Image();
-  image.src = "img/puente.jpg";
+  image.src = document.getElementById('inputImg').value;
   image.crossOrigin = "anonymous";
   image.onload = function () {
   myDrawImageMethod(image);
