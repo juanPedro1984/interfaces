@@ -115,13 +115,21 @@ function myDrawImageMethod(image) {
   let ctx = contexto.ctx;
   let w;
   let h;
+  let sx;
+  let sy;
   if(image.width >= image.height){
     h = image.height * (contexto.canvas.width/image.width);
     w = contexto.canvas.width;
+    sx = 0;
+    sy = (contexto.canvas.height - h)/2;
   }else{
     w = image.width * ( contexto.canvas.height/image.height);
+    h = contexto.canvas.height;
+    sy = 0;
+    sx = (contexto.canvas.widht - w)/2;
   }
-  ctx.drawImage(image,0,0,w,h);
+
+  ctx.drawImage(image,sx,sy,w,h);
 }
 
 function filtro() {
