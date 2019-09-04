@@ -103,7 +103,7 @@ function imagenGradienteColor() {
 
 function cargarImagen() {
   let image = new Image();
-  image.src = "https://pixabay.com/get/52e4d6424952aa14f6d1867dda6d49214b6ac3e45657764a732c7cd197/leaf-4431306_1920.jpg";
+  image.src = "https://pixabay.com/get/52e3d04b4d57a914f6d1867dda6d49214b6ac3e45657764f772d7add97/apartments-4358755_1920.jpg";
   image.crossOrigin = "anonymous";
   image.onload = function () {
     myDrawImageMethod(this);
@@ -113,17 +113,26 @@ function cargarImagen() {
 
 function myDrawImageMethod(image) {
   let ctx = contexto.ctx;
-  ctx.drawImage(image,0,0,contexto.canvas.width,contexto.canvas.height);
+  let w;
+  let h;
+  if(image.width >= image.height){
+    h = image.height * (contexto.canvas.width/image.width);
+    w = contexto.canvas.width;
+  }else{
+    w = image.width * ( contexto.canvas.height/image.height);
+  }
+  ctx.drawImage(image,0,0,w,h);
 }
 
 function filtro() {
   let ctx = contexto.ctx;
   // let image = cargarImagen();
   let image = new Image();
-  image.src = "https://pixabay.com/get/52e4d6424952aa14f6d1867dda6d49214b6ac3e45657764a732c7cd197/leaf-4431306_1920.jpg";
+  image.src = "https://pixabay.com/get/52e3d04b4d57a914f6d1867dda6d49214b6ac3e45657764f772d7add97/apartments-4358755_1920.jpg";
   image.crossOrigin = "anonymous";
   image.onload = function () {
-  ctx.drawImage(image,0,0,contexto.canvas.width,contexto.canvas.height);
+  myDrawImageMethod(image);
+  // ctx.drawImage(image,0,0,contexto.canvas.width,contexto.canvas.height);
   let imageData = ctx.getImageData(0, 0, contexto.canvas.width, contexto.canvas.height);
 
     for ( let x = 0 ; x < imageData.width ; x ++){
