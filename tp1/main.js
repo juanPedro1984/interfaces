@@ -103,7 +103,7 @@ function imagenGradienteColor() {
 
 function cargarImagen() {
   let image = new Image();
-  image.src = "https://pixabay.com/get/52e3d04b4d57a914f6d1867dda6d49214b6ac3e45657764f772d7add97/apartments-4358755_1920.jpg";
+  image.src = "img/puente.jpg";
   image.crossOrigin = "anonymous";
   image.onload = function () {
     myDrawImageMethod(this);
@@ -128,7 +128,7 @@ function filtro() {
   let ctx = contexto.ctx;
   // let image = cargarImagen();
   let image = new Image();
-  image.src = "https://pixabay.com/get/52e3d04b4d57a914f6d1867dda6d49214b6ac3e45657764f772d7add97/apartments-4358755_1920.jpg";
+  image.src = "img/puente.jpg";
   image.crossOrigin = "anonymous";
   image.onload = function () {
   myDrawImageMethod(image);
