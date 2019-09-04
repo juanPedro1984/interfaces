@@ -122,11 +122,11 @@ function myDrawImageMethod(image) {
     w = contexto.canvas.width;
     sx = 0;
     sy = (contexto.canvas.height - h)/2;
-  }else{
+  }else if (image.width < image.height){
     w = image.width * ( contexto.canvas.height/image.height);
     h = contexto.canvas.height;
     sy = 0;
-    sx = (contexto.canvas.widht - w)/2;
+    sx = (contexto.canvas.width - w)/2;
   }
 
   ctx.drawImage(image,sx,sy,w,h);
